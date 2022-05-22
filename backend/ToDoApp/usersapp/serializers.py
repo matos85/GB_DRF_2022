@@ -6,4 +6,4 @@ class UsersAppModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Usersapp
         fields = 'username, firstname, lastname, email'
-        # fields = '__all__'
+        fields = '__all__'
