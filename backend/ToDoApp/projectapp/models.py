@@ -8,9 +8,17 @@ class ProjectModel(models.Model):
     users_work = models.ManyToManyField(UsersappModel)
 
 
-class ToDo(models.Model):
+    def __str__(self):
+        return self.name_project
+
+
+class ToDoModel(models.Model):
     project = models.ForeignKey(ProjectModel, on_delete=models.CASCADE)
     text = models.TextField('Description', max_length=256)
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(UsersappModel, models.PROTECT)
+
+
+    def __str__(self):
+        return self.project
