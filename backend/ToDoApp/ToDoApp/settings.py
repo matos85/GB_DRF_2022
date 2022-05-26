@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # мои приложения
     'ToDoApp',
     'usersapp',
+    'projectapp',
 
 ]
 

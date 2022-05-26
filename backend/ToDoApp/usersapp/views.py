@@ -1,8 +1,8 @@
 from rest_framework.viewsets import ModelViewSet
-from .models import Usersapp
+from .models import UsersappModel
 from .serializers import UsersAppModelSerializer
 
 
 class UsersAppModelViewSet(ModelViewSet):
-    queryset = Usersapp.objects.all()
+    queryset = UsersappModel.objects.all()
     serializer_class = UsersAppModelSerializer
