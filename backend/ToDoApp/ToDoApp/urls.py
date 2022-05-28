@@ -16,19 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
 from rest_framework.routers import DefaultRouter
 from usersapp.views import UsersAppModelViewSet
-from projectapp.views import ProjectAppModelViewSet, ToDoModelViewSet
+from projectapp.views import ProjectModelViewSet, TodoModelViewSet
+# from projectapp.views import ProjectAppModelViewSet, ToDoModelViewSet
+
 
 router = DefaultRouter()
 router.register('Users', UsersAppModelViewSet)
-router.register('Projects', ProjectAppModelViewSet)
-router.register('ToDo', ToDoModelViewSet)
+router.register('Projects', ProjectModelViewSet)
+router.register('ToDo', TodoModelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api-auth/', include('rest_framework.urls')),  # адрес для авториазация в DRF
-    path('api/', include(router.urls)), # подключаем роутер для API
+    path('api/', include(router.urls)),  # подключаем роутер для API
+    # path('viewsets/', include(router.urls))
 ]
+
+
+
+
